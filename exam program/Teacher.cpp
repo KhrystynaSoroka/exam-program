@@ -1,24 +1,17 @@
-#include <iostream>
-#include <string>
-#include "Person.cpp"
+#include "Teacher.h"
 
-using namespace std;
+Teacher::Teacher(std::string s, std::string n, std::string p)
+    : Person(s, n), position(p) {}
 
-class Teacher : public Person {
-protected:
-    string position;
+Teacher::Teacher(const Teacher& t) : Person(t), position(t.position) {}
 
-public:
-    Teacher() : Person(), position("") {}
+Teacher::Teacher(Teacher&& t) noexcept : Person(std::move(t)), position(std::move(t.position)) {}
 
-    Teacher(string s, string n, string p)
-        : Person(s, n), position(p) {}
+void Teacher::setPosition(std::string p) { position = p; }
+std::string Teacher::getPosition() const { return position; }
 
-    void setPosition(string p) { position = p; }
-
-    void print() const override {
-        cout << "Викладач: ";
-        Person::print();
-        cout << ", посада: " << position;
-    }
-};
+void Teacher::print() const {
+    std::cout << "[Викладач] ";
+    Person::print();
+    std::cout << ", посада: " << position << std::endl;
+}

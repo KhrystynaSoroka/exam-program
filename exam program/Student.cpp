@@ -1,20 +1,17 @@
-#include "Person.cpp"
+#include "Student.h"
 
-class Student : public Person {
-protected:
-    string groupNumber;
+Student::Student(std::string s, std::string n, std::string g)
+    : Person(s, n), groupNumber(g) {}///ini
 
-public:
-    Student() : Person(), groupNumber("") {}
+Student::Student(const Student& s) : Person(s), groupNumber(s.groupNumber) {}///////copy
 
-    Student(string s, string n, string g)
-        : Person(s, n), groupNumber(g) {}
+Student::Student(Student&& s) noexcept : Person(std::move(s)), groupNumber(std::move(s.groupNumber)) {}//move
 
-    void setGroup(string g) { groupNumber = g; }
+void Student::setGroup(std::string g) { groupNumber = g; }
+std::string Student::getGroup() const { return groupNumber; }
 
-    void print() const override {
-        cout << "Студент: ";
-        Person::print();
-        cout << ", група: " << groupNumber;
-    }
-};
+void Student::print() const {
+    std::cout << "[Студент] ";
+    Person::print();
+    std::cout << ", група: " << groupNumber << std::endl;
+}
