@@ -6,8 +6,6 @@ using namespace std;
 #include "Teacher.h"
 #include "Exam.h"
 #include "GradeBook.h"
-
-// оголошення функції з 5 пункту
 void showInfo(const Person* p);
 
 int main() {

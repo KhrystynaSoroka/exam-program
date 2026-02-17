@@ -1,38 +1,18 @@
-#include <iostream>
-#include <string>
-#include <vector>
+#include "Person.h"
+//ініціал
+Person::Person(std::string s, std::string n) : surname(s), name(n) {}
+//коп
+Person::Person(const Person& p) : surname(p.surname), name(p.name) {}
+//перем
+Person::Person(Person&& p) noexcept : surname(std::move(p.surname)), name(std::move(p.name)) {}
 
-using namespace std;
+Person::~Person() {}
 
-class Person {
-protected:
-    string surname;
-    string name;
+void Person::setSurname(std::string s) { surname = s; }
+void Person::setName(std::string n) { name = n; }
+std::string Person::getSurname() const { return surname; }
+std::string Person::getName() const { return name; }
 
-public:
-    Person() : surname(""), name("") {}
-    Person(string s, string n) : surname(s), name(n) {}
-    Person(const Person& p) {
-        surname = p.surname;
-        name = p.name;
-    }
-    Person(Person&& p) noexcept {
-        surname = move(p.surname);
-        name = move(p.name);
-    }
-    virtual ~Person() {}
-    void setSurname(string s) { surname = s; }
-    void setName(string n) { name = n; }
-    virtual void print() const {
-        cout << surname << " " << name;
-    }
-
-    friend ostream& operator<<(ostream& os, const Person& p) {
-        p.print();
-        return os;
-    }
-    friend istream& operator>>(istream& is, Person& p) {
-        is >> p.surname >> p.name;
-        return is;
-    }
-};
+void Person::print() const {
+    std::cout << surname << " " << name;
+}
