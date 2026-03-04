@@ -3,7 +3,7 @@
 
 #include "Person.h"
 
-class Teacher : public Person {
+class Teacher : virtual public Person {
 private:
     std::string position;
 

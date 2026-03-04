@@ -3,7 +3,7 @@
 
 #include "Person.h"
 
-class Student : public Person {
+class Student : virtual public Person {
 private:
     std::string groupNumber;
 
