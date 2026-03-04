@@ -1,9 +1,15 @@
-#include "Student.h"
-#include "Teacher.h"
-#include <vector>
-
-
 /////що саме потрібно в main. Готові дані, чи дозволити користувачу вводити самому. Думаю друге. Але з реалізацією всіх конструкторів і методів.
 //  Чи щось ще потрібно, бо виглядає пусто................(
 
 
+#include <iostream>
+#include <string>
+#include "Exam.h"
+
+using namespace std;
+
+int main() {
+    
+
+    return 0;
+}

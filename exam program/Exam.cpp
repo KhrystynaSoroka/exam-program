@@ -9,7 +9,10 @@ Exam::Exam(std::string s_surname, std::string s_name, std::string group,
     Teacher(t_surname, t_name, pos),
     subjectName(subject), hours(h), date(d), grade(g)
 {}
-
+void Exam::operator()(std::string subject, int g) {
+    subjectName = subject;
+    grade = g;
+}
 // Конструктор копіювання
 Exam::Exam(const Exam& e)
     : Student(e), Teacher(e),
