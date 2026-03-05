@@ -33,6 +33,13 @@ public:
     // Потоки
     friend std::ostream& operator<<(std::ostream& os, const Person& p);
     friend std::istream& operator>>(std::istream& is, Person& p);
+
+
+
+
+    virtual std::string getStringValue() const {
+        return surname; //?//основа майбутнього поліморфізму, сподіваюся світлого майбутнього((((
+    }
 };
 
 #endif

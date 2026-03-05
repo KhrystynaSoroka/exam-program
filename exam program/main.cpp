@@ -5,11 +5,16 @@
 #include <iostream>
 #include <string>
 #include "Exam.h"
+#include <vector>
+#include <vector>
 
 using namespace std;
 
 int main() {
-    
-
+   
     return 0;
 }
+
+
+
+/////  !!!  ТРЕБА ДОДАТИ ФАЙЛ SCV або  JSON  ........ бо де зберігати дані ..........

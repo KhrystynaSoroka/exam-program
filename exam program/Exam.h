@@ -12,7 +12,6 @@ private:
     int grade;
 
 public:
-    // Конструктори
     Exam(std::string s_surname = "", std::string s_name = "", std::string group = "",
         std::string t_surname = "", std::string t_name = "", std::string pos = "",
         std::string subject = "", int h = 0, std::string d = "", int g = 0);
@@ -21,7 +20,7 @@ public:
     Exam(Exam&& e) noexcept;
     ~Exam();
 
-    // Методи встановлення та отримання
+    /////mетоди встановлення та отримання
     void setSubjectInfo(std::string subject, int h, std::string d, int g);
     std::string getSubjectName() const;
     int getGrade() const;
@@ -31,6 +30,15 @@ public:
     void operator()(std::string subject, int g); 
 
     void print() const;
+    
+    
+    
+    
+    
+    
+    std::string getStringValue() const override {
+        return subjectName; ///повернення для цього полім кластера....................перевизнач
+    }
 };
 
 #endif
